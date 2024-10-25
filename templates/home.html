@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Vehicle Service</title>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+
+        body {
+            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2210775-jpeg.jpg') center center no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-container {
+            background: #f8f4e5;
+            padding: 20px 50px;
+            border: 2px solid rgba(0, 0, 0, 1);
+            box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar-brand {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 2rem;
+            color: rgba(0, 0, 0, 1);
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .navbar-nav li {
+            margin: 0 15px;
+        }
+
+        .navbar-nav a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 1);
+            font-size: 1.2rem;
+        }
+
+        .navbar-nav a:hover {
+            color: #ffa580;
+        }
+
+        .btn {
+            font-family: 'Fjalla One', sans-serif;
+            background: #ffa580;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgba(0, 0, 0, 1);
+        }
+
+        .btn:hover {
+            background: rgba(0, 0, 0, 1);
+            color: #fff;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .card {
+            background: #f8f4e5;
+            width: 300px;
+            padding: 20px;
+            margin: 15px;
+            border: 2px solid rgba(0, 0, 0, 1);
+            box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 5px solid rgba(0, 0, 0, 1);
+        }
+
+        .card p {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        ::selection {
+            background: #ffc8ff;
+        }
+        footer {
+        background: #f8f4e5;
+        padding: 20px 50px;
+        border-top: 2px solid rgba(0, 0, 0, 1);
+        box-shadow: 0px -3px 1px 1px #ffa580, 0px -3px 1px 2px rgba(0, 0, 0, 1);
+        width: 100%;
+        text-align: center;
+        font-family: "Fjalla One", sans-serif;
+        margin-top: auto; /* Pushes the footer to the bottom */
+      }
+
+      footer p {
+        margin: 5px 0;
+        color: rgba(0, 0, 0, 1);
+      }
+
+      footer a {
+        color: #ffa580;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: rgba(0, 0, 0, 1);
+      }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <div class="navbar-container">
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">Vehicle Service</a>
+            <ul class="navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Options</a></li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
+            </ul>
+            <!-- <div class="btn-container">
+                <button class="btn" onclick="location.href='{{ url_for('log_in') }}'">Log in</button>
+                <button class="btn" onclick="location.href='{{ url_for('sign_up') }}'">Sign Up</button>
+            </div> -->
+        </nav>
+    </div>
+
+    <!-- Card Section -->
+    <div class="cards-container">
+        <div class="card" onclick="location.href='{{ url_for('form') }}'">
+            <img src="{{ url_for('static', filename='1.webp') }}" alt="Vehicle Number Entry">
+            <p>Type vehicle number</p>
+        </div>
+
+        <div class="card" onclick="location.href='{{ url_for('photo_page') }}'">
+            <img src="{{ url_for('static', filename='2.webp') }}" alt="Scan Number Plate">
+            <p>Scan Number plate</p>
+        </div>
+    </div>
+    <footer>
+        <p>Vehicle Service</p>
+        <p>1234 Street Name, City, Country</p>
+        <p>Phone: +123 456 7890 | Email: <a href="mailto:info@vehicleservice.com">info@vehicleservice.com</a></p>
+        <p>&copy; 2024 Vehicle Service. All Rights Reserved.</p>
+      </footer>
+</body>
+
+</html>

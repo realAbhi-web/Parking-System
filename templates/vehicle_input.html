@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Number Form</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <div class="form-container">
+        <h2>Enter Your Vehicle Number</h2>
+        <form action="#">
+            <input type="text" class="input-field" placeholder="Enter Vehicle Number" required>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div> -->
+    <form method="POST">
+      <div class="mb-3 form-container">
+        <label for="exampleInputEmail1" class="form-label">Enter Your Vehicle Number</label>
+        <input
+          type="text"
+          class="form-control input-field"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          name="form-page-number-plate"
+        />
+        <div id="emailHelp" class="form-text">
+          <!-- We'll never share your email with anyone else. -->
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+</body>
+</html>

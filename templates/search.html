@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vehicle Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2210775-jpeg.jpg") center center no-repeat;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(248, 244, 229, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #ffa580;
+            border: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: rgba(0, 0, 0, 1);
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 1);
+        }
+
+        .warning {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Vehicle Information</h2>
+        
+        {% if car_dictionary is not none %}
+            <h3>Owner Name: {{ car_dictionary["owner_name"] | default("Not Available") }}</h3>
+            <h3>Car Model: {{ car_dictionary["car_model"] | default("Not Available") }}</h3>
+            <h3>Vehicle Color: {{ car_dictionary["vehicle_color"] | default("Not Available") }}</h3>
+            <h3>Seats: {{ car_dictionary["seat_capacity"] | default("Not Available") }}</h3>
+            <h3>Fuel Type: {{ car_dictionary["fuel_type"] | default("Not Available") }}</h3>
+            <h3>Engine Number: {{ car_dictionary["engine_no"] | default("Not Available") }}</h3>
+            <h3>Registration Date: {{ car_dictionary["registration_date"] | default("Not Available") }}</h3>
+            <h3>Insurance Upto: {{ car_dictionary["insurance_upto"] | default("Not Available") }}</h3>
+            <h3>Insurance Company: {{ car_dictionary["insurance_company"] | default("Not Available") }}</h3>
+            <h3>Manufacturing Time: {{ car_dictionary["manufacturing_time"] | default("Not Available") }}</h3>
+            <h3 class="warning">
+                {% if car_dictionary.get('criminal_activity', False) %}
+                    WARNING: This car is involved in criminal activity!
+                {% endif %}
+            </h3>
+        {% else %}
+            <p>No data available.</p>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <form method="POST" action="{{ url_for('call') }}">
+            <button type="submit">Call the owner!</button>
+        </form>
+
+        <form method="POST" action="{{ url_for('emergency_call') }}">
+            <button type="submit">Report an accident!</button>
+        </form>
+    </div>
+
+    % for user in users %}
+    <div>
+        <p>
+            <strong>{{ user.car_owner_name }}</strong> - {{ user.number_plate }}<br>
+            Status: {{ 'Criminal' if user.criminal_activity else 'Clear' }}
+        </p>
+        <form method="POST" action="{{ url_for('tag_criminal', user_id=user.id) }}">
+            <button type="submit" class="btn {{ 'btn-danger' if user.criminal_activity else 'btn-success' }}">
+                {{ 'Mark as Clear' if user.criminal_activity else 'Mark as Criminal' }}
+            </button>
+        </form>
+    </div>
+{% endfor %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

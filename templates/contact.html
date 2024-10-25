@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+
+      body {
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2210775-jpeg.jpg")
+          center center no-repeat;
+        background-size: cover;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .form-container {
+        background: #f8f4e5;
+        padding: 50px 100px;
+        border: 2px solid rgba(0, 0, 0, 1);
+        box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+        text-align: center;
+        max-width: 500px;
+        margin: auto; /* Center the form vertically */
+      }
+
+      input, textarea {
+        display: block;
+        width: 100%;
+        font-size: 14pt;
+        line-height: 28pt;
+        font-family: "Fjalla One", sans-serif;
+        margin-bottom: 28pt;
+        border: none;
+        border-bottom: 5px solid rgba(0, 0, 0, 1);
+        background: #f8f4e5;
+        min-width: 250px;
+        padding-left: 5px;
+        outline: none;
+        color: rgba(0, 0, 0, 1);
+      }
+
+      input:focus, textarea:focus {
+        border-bottom: 5px solid #ffa580;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        line-height: 28pt;
+        padding: 0 20px;
+        background: #ffa580;
+        letter-spacing: 2px;
+        transition: 0.2s all ease-in-out;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 1);
+        box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgba(0, 0, 0, 1);
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: rgba(0, 0, 0, 1);
+        color: white;
+        border: 1px solid rgba(0, 0, 0, 1);
+      }
+
+      ::selection {
+        background: #ffc8ff;
+      }
+
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        border-bottom: 5px solid #95a4ff;
+        -webkit-text-fill-color: #2a293e;
+        -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
+      footer {
+        background: #f8f4e5;
+        padding: 20px 50px;
+        border-top: 2px solid rgba(0, 0, 0, 1);
+        box-shadow: 0px -3px 1px 1px #ffa580, 0px -3px 1px 2px rgba(0, 0, 0, 1);
+        width: 100%;
+        text-align: center;
+        font-family: "Fjalla One", sans-serif;
+        margin-top: auto; /* Pushes the footer to the bottom */
+      }
+
+      footer p {
+        margin: 5px 0;
+        color: rgba(0, 0, 0, 1);
+      }
+
+      footer a {
+        color: #ffa580;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: rgba(0, 0, 0, 1);
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <!-- Contact Form -->
+    <div class="form-container">
+      <h2>Contact Us</h2>
+
+      <!-- Contact Form Structure -->
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input name="message" placeholder="Your Message" required></input>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>Vehicle Service</p>
+      <p>1234 Street Name, City, Country</p>
+      <p>Phone: +123 456 7890 | Email: <a href="mailto:info@vehicleservice.com">info@vehicleservice.com</a></p>
+      <p>&copy; 2024 Vehicle Service. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

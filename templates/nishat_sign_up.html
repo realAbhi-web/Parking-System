@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+      /* General Styling */
+      body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f2f5;
+      }
+
+      /* Form Container */
+      .form-container {
+        background-color: white;
+        padding: 40px;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      /* Heading */
+      h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      /* Input Field */
+      .form-control {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: none;
+      }
+
+      /* Submit Button */
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 500px) {
+        .form-container {
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Signup Form Container -->
+    <div class="form-container">
+      <form method="POST" name="signup_form">
+        <h2>Sign Up</h2>
+        <!-- First Name -->
+        <div class="mb-3">
+          <label for="first_name" class="form-label">First Name</label>
+          <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter your first name" required>
+        </div>
+
+        <!-- Last Name -->
+        <div class="mb-3">
+          <label for="last_name" class="form-label">Last Name</label>
+          <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter your last name" required>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Car Model -->
+        <div class="mb-3">
+          <label for="car_model" class="form-label">Car Model</label>
+          <input type="text" class="form-control" name="car_model" id="car_model" placeholder="Enter your car model" required>
+        </div>
+
+        <!-- Car Number -->
+        <div class="mb-3">
+          <label for="car_number" class="form-label">Car Number</label>
+          <input type="text" class="form-control" name="car_number" id="car_number" placeholder="Enter your car number" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-3">
+          <label for="confirm_password" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm your password" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
+    </div>
+
+  </body>
+</html>

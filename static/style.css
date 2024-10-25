@@ -1,0 +1,28 @@
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer; /* Makes the card look clickable */
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Keeps the card's original text color */
+    border: 1px solid #ddd; /* Optional: adds a border to make it look like a card */
+    transition: box-shadow 0.3s ease; /* Adds a hover effect */
+    
+  }
+  .card img {
+    width: 100%; /* Full width of the card */
+    height: 315px; /* Fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the entire area without distortion */
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevates the card on hover */
+  }
